@@ -1,0 +1,435 @@
+//Functions
+border-box(position, arguments)
+	@media $media-tablet-portrait
+		border-{position} arguments
+
+border-box-bottom(arguments)
+	border-box('bottom', arguments)
+
+border-box-right(arguments)
+	@media $media-tablet-landscape
+		border-right arguments
+
+//Broker Headers
+.b-title
+	border-box-bottom(0.1rem solid $brokerHeaderBorder)
+.mobile
+	#broker-portfolio-header
+		/*.b-title
+			border-bottom 0.1rem solid $brokerMobileHeaderBorder*/
+	.broker-mobile-separator
+		margin-top 18px
+
+//Broker Overview -> Portfolio overview container
+#my-securities-portfolio
+	border-box-bottom(0.1rem solid $separatorsBrokerPortfolio)
+#actual-invested-container
+	@media $media-tablet-landscape
+		border-left 0.1rem solid $brokerColSummaryText
+
+//Broker Overview -> Market overview container
+#market-container
+	#market-session-summary
+		#market-session-row
+			#market-session-summary-up-down-chart
+				border-left 1px solid $separatorsMarket
+		@media $media-tablet-portrait
+			border-left 1px solid $brokerColWebGreyDividerLight
+
+//Broker Index Detail
+#broker-index-summary
+	#broker-stock-detail-chart
+		border-left 1px solid $brokerColWebGreyDivider
+	#broker-index-etfs
+		border-left 1px solid $brokerColWebGreyDivider
+#index-detail-layout
+	&.tablet-portrait
+		#broker-index-summary
+			#broker-index-summary-session
+				#broker-index-range-session-widget
+					border-left 0.1rem solid $brokerColWebGreyDivider
+		#broker-stock-detail-chart
+			border-left 0px
+			border-top 1px solid $brokerColWebGreyDivider
+#broker-stocks-table-header
+	border-top 1px solid $brokerColWebGreyDivider
+
+//Broker portfolio detail -> Cancel live orders
+.cancel-live-order-separator
+	border-bottom 0.1rem solid $brokerColBorder
+	margin-top 2rem
+	margin-bottom 2rem
+.mobile
+	.portfolio-home-button
+		border  solid 0.1rem $brokerMobileHeaderBorder
+
+//Broker overview, broker portfolio detail -> Cancel live order
+#cancel-live-order-body
+	border-bottom 0.2rem solid $brokerColDivider
+
+//Broker market detail
+#market-detail-links
+	border-bottom solid 0.6rem $brokerColDivider
+
+.tablet-portrait
+	#market-detail-links
+		border-bottom 0rem
+		.broker-search-box-layout
+			border-top solid 0.6rem $brokerColDivider
+			margin-top 1rem
+
+#market-news-detail-container
+	>div
+		>div
+			border-bottom solid 0.1rem $brokerMarketDetailSeparator
+
+.market-row
+	border-bottom solid 0.6rem $brokerMarketDetailSeparator
+	&:last-child
+		border 0
+
+//Broker Portfolio Detail
+#p-detail-container
+	#portfolio-detail-time-series
+		border-right 0.1rem solid $brokerColSummaryText
+#p-detail-links
+	border-bottom 0.9rem solid $brokerColSelectorBackground
+#portfolio-overview-table
+	@media $media-tablet-landscape
+		border-right solid 0.1rem $brokerColSelectorBackground
+
+//Broker Portfolio Detail -> finantial events
+#b-pd-fe-d-step-lightbox
+	.b-pd-fe-d-sl-step
+		.b-pd-fe-d-sl-step-summary
+			border-bottom solid 0.1rem $brokerMastep-lightbox-newrketDetailSeparator
+		.b-pd-fe-d-sl-step-button
+			border-top solid 0.1rem $brokerMarketDetailSeparator
+#b-pd-fe-d-step-lightbox
+	&.step-lightbox-new
+		.b-pd-fe-d-sl-step
+			margin: 0
+			.b-pd-fe-d-sl-step-summary
+				border-bottom 0
+				padding-left $baseSize
+			.b-pd-fe-d-sl-step-congratulation
+				padding 0
+
+
+//Broker Stock Detail
+#broker-stock-detail-summary, #broker-stock-detail-range
+	border-right 1px solid $brokerColDivider
+
+//Broker Ideas Home
+&#ideas-home-container
+	.toggle-region-header.close
+		border-bottom 0.1rem solid $brokerMobileHeaderBorder
+.desktop
+	.br-ideas-investor-feeling
+		border-left 1px solid $brokerColDivider
+
+.account-associated-change
+	h1
+		margin: 2.8rem 0 1.8rem 0
+	h2
+		@media $media-mobile
+			padding-left: 1.2rem
+	h3
+		margin-bottom: 2rem
+		height: 6rem
+	li
+		.account-item-icon
+
+			border-radius: 50%
+			background-color: $darkOrange
+			height: 6rem
+			width: 6rem
+			margin: auto
+			text-align: center
+			margin: auto
+			margin-left: 1.2rem
+			left: 1rem
+			top: 0
+			bottom: 0
+			@media $media-tablet-portrait
+				display: table
+			i
+				&.ico
+					font-size: 3.6rem
+					vertical-align: middle
+					margin-right: 0
+					margin: auto
+					height: 100%
+					padding: 0
+					line-height: normal
+					display: block
+					color: $white
+					margin-top: .6rem
+					@media $media-mobile
+						padding-top: .6rem
+					&:before
+						vertical-align: middle
+
+		.account-detail
+			display: table-cell
+			vertical-align: middle
+			width: 100%
+			padding-left: 8rem
+		p
+			text-overflow: ellipsis
+			white-space: nowrap
+			font-size: 1.2rem
+			padding: 0
+			margin: 0
+			&.line1
+				font-size: 1.6rem
+			&.line3
+				color: $orange
+				font-size: 2.2rem;
+				font-family: $displayFontFamily
+				margin-top: .3rem
+				@media $media-mobile
+					font-size: 1.8rem
+
+	.selected-account
+		ul
+			list-style: none
+			padding: 0
+			a
+				width: 100%
+				display: table
+				position: relative
+				padding: 2.6rem 0 2rem
+				background-color: $white
+				border-bottom: none
+				table-layout: fixed
+				@media $media-tablet-portrait
+					&:after
+						border-bottom: 1rem solid transparent
+						border-left: 1rem solid $paleGray
+						border-top: 1rem solid transparent
+						content: ""
+						position: absolute
+						left: 100%
+						top: 40%
+						height: 0
+						width: 0
+						clear: both
+						display: block
+				@media $media-tablet-portrait
+					border-bottom: .1rem solid $lightGray
+					background-color: $paleGray
+				@media $media-mobile
+					padding: 0 0 2rem
+
+			&:after
+				border-top: 1.2rem solid $white
+				border-left: 1.2rem solid transparent
+				border-right: 1.2rem solid transparent
+				content: ''
+				display: block
+				height: 0
+				right: 46%
+				position: absolute
+				width: 0
+				z-index: 998
+				@media $media-tablet-portrait
+					display: none
+		p
+			&.line3
+				color: $black
+	.accounts-container-slider
+		h2
+			@media $media-mobile
+				padding-top: 1.2rem
+		ul
+			list-style: none
+			padding: 0
+			li
+				line-height: 1.5rem
+				a
+					width: 100%
+					display: table
+					position: relative
+					padding: 2.6rem 0 2rem
+					table-layout: fixed
+					@media $media-tablet-portrait
+						border-bottom: .1rem solid $lightGray
+
+	.accounts-container
+		@media $media-mobile
+			background-color: $darkOrange
+			h2
+				&.column-heading
+					margin-top:0
+					color: $white
+
+	.account-associated-section
+		@media $media-tablet-portrait
+			padding-top: 1rem
+			padding-right: 1.2rem
+			margin-right: 0
+			width: 23rem
+		&:last-child
+			border-right: none
+			padding-right: 0
+			width: 23.6rem
+		@media $media-tablet-landscape
+			border-right: none
+			width: 28.4rem
+			&:last-child
+				border-right: none
+				padding-right: 0
+				width: 29.6rem
+		@media $media-desktop
+			width: 35.6rem
+			&:last-child
+				width: 36.8rem
+		.cancel-account-change
+			margin-top: 5 rem
+	.cancel-security-component-container
+		display: none
+
+	&[data-ing-state="select-account-associated"]
+		.mobile
+			.account-associated-mm-placeholder
+				display: block
+				@media $media-tablet-portrait
+					display: none
+			.sl_container
+				padding-top: 0
+				height: 15rem
+		.accounts-container-slider
+			ul
+				li
+					&.account-item
+						line-height: 1.5rem
+						a
+							background-color: $white
+							@media $media-tablet-portrait
+								&:hover
+									background-color: $paleGray
+		.v-bar-container
+			@media $media-tablet-portrait
+				display: block
+			.v-bar
+				display: block
+
+	&[data-ing-state="confirmation-account-associated-selected"]
+	&[data-ing-state="first-account-associated-selected"]
+	&[data-ing-state="account-associated-selected"]
+		.editButton
+			display: block
+			position: relative
+			text-align: right
+			@media $media-tablet-portrait
+				text-align: left
+
+		.account-associated-section
+			padding: 0rem 1.2rem 0rem 1.2rem
+			@media $media-tablet-portrait
+				padding: 1.8rem 0 1.8rem 1.8rem
+				&:first-child
+					padding: 1.8rem 1.8rem 1.8rem 0
+		.accounts-container
+			@media $media-mobile
+				background-color: $paleGray
+				h2
+					&.column-heading
+						color: $black
+			&:after
+				border-top: 1.2rem solid $paleGray
+				border-left: 1.2rem solid transparent
+				border-right: 1.2rem solid transparent
+				content: ''
+				display: block
+				height: 0
+				right: 46%
+				position: absolute
+				width: 0
+				z-index: 998
+				@media $media-tablet-portrait
+					display: none
+
+		.accounts-container-slider
+			ul
+				li
+					display: none
+					&.selected
+						display: block
+					&.account-item
+						a
+							background-color: $paleGray
+							border-bottom: none
+							@media $media-tablet-portrait
+								border-bottom: .1rem solid $lightGray
+							@media $media-mobile
+								padding: 0 0 2rem
+
+		.v-bar-container
+			display: none
+
+	&[data-ing-state="confirmation-account-associated-selected"]
+	&[data-ing-state="account-associated-selected"]
+	&[data-ing-state="first-account-associated-selected"]
+		#cancel-accounts-associated
+			display: none
+
+	&[data-ing-state="account-associated-selected"]
+	&[data-ing-state="first-account-associated-selected"]
+		.cancel-security-component-container
+			display: block
+
+	&[data-ing-state="first-account-associated-selected"]
+	&[data-ing-state="confirmation-account-associated-selected"]
+		.editButton
+			display: none
+	#security-component-placeholder
+		@media $media-mobile
+			margin-top: 2.8rem
+	.cancel-security-component-container
+		display: none
+		text-align: right
+		padding: 1.2rem
+		#cancel-security-component
+			width: 100%
+			display: inline-block
+			@media $media-tablet-portrait
+				width: 18rem
+			@media $media-tablet-landscape
+				width: 32rem
+
+	#confirmation-account-change
+		text-align: left
+		i
+			color: $darkOrange
+			vertical-align: top
+		.confirmation-body
+			padding: 1.8rem 1.8rem
+			@media $media-tablet-portrait
+				padding: 3.2rem 0 3.2rem 5rem
+			background-color: $paleGray
+			.account-change-confirmation-ico
+				font-size: 8.7rem
+				display: none
+				@media $media-tablet-portrait
+					display: block
+			.account-change-confirmation-txt
+				@media $media-mobile
+					h4
+						padding-left: 6.5rem
+						margin-bottom: 2.8rem
+				i
+					display: inline-block
+					position: absolute
+					left: 0
+					&:before
+						position: absolute
+						left: 1.8rem
+						top: 1rem
+						font-size: 5rem
+					@media $media-tablet-portrait
+						display: none
+			.account-change-confirmation-links
+				.linkContainer
+					width: 25rem
